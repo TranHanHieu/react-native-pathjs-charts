@@ -209,8 +209,8 @@ export default class LineChart extends Component {
           <Path
             key={'lines' + i}
             d={c.line.path.print()}
-            stroke={this.color(i)}
-            strokeWidth={strokeWidthForCurve}
+            stroke={'#d0d4db'}
+            strokeWidth={1.5}
             strokeOpacity={strokeOpacityForCurve}
             fill="none"
             strokeDasharray={strokeDasharrayForCurve}
@@ -306,7 +306,7 @@ export default class LineChart extends Component {
                 d={c.area.path.print()}
                 fillOpacity={0.5}
                 stroke="none"
-                fill={'#d0d4db'}
+                fill={'#f3f6f7'}
               />
             );
 
