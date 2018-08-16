@@ -111,9 +111,8 @@ export default class Axis extends Component {
   render() {
     const { chartArea, options, scale } = this.props
     const horizontal = options.orient ==='top' || options.orient ==='bottom'
-
-    const axis = new AxisStruct(scale,options,chartArea,horizontal).axis()
-
+    let axis = new AxisStruct(scale,options,chartArea,horizontal).axis()
+    if(options.orient ==='bottom') axis.ticks = ['d', 'f', 'f', 'd', 'f', 'f', 'd', 'f', 'f', 'd', 'f', 'f', 'd', 'f', 'f', 'd', 'f', 'f', 'd', 'f', 'f', 'd', 'f', 'f', 'd', 'f', 'f', 'd', 'f', 'f', 'h',]
     let textAnchor = 'start'
     if (options.orient === 'top' || options.orient === 'bottom') textAnchor = 'middle'
     if (options.orient === 'left') textAnchor = 'end'
@@ -153,13 +152,14 @@ export default class Axis extends Component {
       let gxy = horizontal ? [scale(scaleBase),chartArea.y.min]:[chartArea.x.min,scale(scaleBase)]
 
       let returnValue
+      // alert(options.orient);
       if (label !== undefined && label !== null) {
         returnValue =
           <G key={i} x={gxy[0]} y={gxy[1]}>
-              {options.showTicks &&
+              {options.showTicks && options.orient === 'bottom' &&
                 <Circle r={options.tickSize} cx="0" cy="0" stroke={options.tickColor} fill={options.tickColor} />
               }
-              {options.showLabels &&
+              {/* {options.showLabels &&
                 <Text x={xy[0]} y={xy[1]}
                       fontFamily={textStyle.fontFamily}
                       fontSize={textStyle.fontSize}
@@ -168,7 +168,7 @@ export default class Axis extends Component {
                       fill={textStyle.fill}
                       textAnchor={textAnchor}>
                       {label}
-                </Text>}
+                </Text>} */}
           </G>
       }
 
@@ -184,7 +184,7 @@ export default class Axis extends Component {
 
     let returnV = <G>
               <G x={offset.x} y={offset.y}>
-                {options.showAxis ? <Path d={axis.path.print()} strokeOpacity={options.opacity} stroke={options.color} strokeWidth={options.strokeWidth} fill="none"/> : null}
+                {options.orient == 'bottom' && options.showAxis ? <Path d={axis.path.print()} strokeOpacity={options.opacity} stroke={options.color} strokeWidth={options.strokeWidth} fill="none"/> : null}
               </G>
               {ticks}
             </G>

@@ -18,7 +18,7 @@ SPDX-License-Identifier: Apache-2.0
 
 import LineChart from './Line.js'
 
-const StockLine = require('paths-js/stock')
+const StockLine = require('paths-js/smooth-line')
 
 export default class StockLineChart extends LineChart {
   constructor(props) {

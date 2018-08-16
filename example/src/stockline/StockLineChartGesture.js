@@ -19,127 +19,71 @@ SPDX-License-Identifier: Apache-2.0
 'use strict';
 
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Dimensions, Text } from 'react-native';
 
 import { StockLine } from 'react-native-pathjs-charts';
 
+let { width } = Dimensions.get('window');
 const data = [
-  [{
-    "x": 0,
-    "y": 47782
-  }, {
-    "x": 1,
-    "y": 48497
-  }, {
-    "x": 2,
-    "y": 77128
-  }, {
-    "x": 3,
-    "y": 73413
-  }, {
-    "x": 4,
-    "y": 58257
-  }, {
-    "x": 5,
-    "y": 40579
-  }, {
-    "x": 6,
-    "y": 72893
-  }, {
-    "x": 7,
-    "y": 60663
-  }, {
-    "x": 8,
-    "y": 15715
-  }, {
-    "x": 9,
-    "y": 40305
-  }, {
-    "x": 10,
-    "y": 68592
-  }, {
-    "x": 11,
-    "y": 95664
-  }, {
-    "x": 12,
-    "y": 17908
-  }, {
-    "x": 13,
-    "y": 22838
-  }, {
-    "x": 14,
-    "y": 32153
-  }, {
-    "x": 15,
-    "y": 56594
-  }, {
-    "x": 16,
-    "y": 76348
-  }, {
-    "x": 17,
-    "y": 46222
-  }, {
-    "x": 18,
-    "y": 59304
-  }],
-  [{
-    "x": 0,
-    "y": 132189
-  }, {
-    "x": 1,
-    "y": 61705
-  }, {
-    "x": 2,
-    "y": 154976
-  }, {
-    "x": 3,
-    "y": 81304
-  }, {
-    "x": 4,
-    "y": 172572
-  }, {
-    "x": 5,
-    "y": 140656
-  }, {
-    "x": 6,
-    "y": 148606
-  }, {
-    "x": 7,
-    "y": 53010
-  }, {
-    "x": 8,
-    "y": 110783
-  }, {
-    "x": 9,
-    "y": 196446
-  }, {
-    "x": 10,
-    "y": 117057
-  }, {
-    "x": 11,
-    "y": 186765
-  }, {
-    "x": 12,
-    "y": 174908
-  }, {
-    "x": 13,
-    "y": 75247
-  }, {
-    "x": 14,
-    "y": 192894
-  }, {
-    "x": 15,
-    "y": 150356
-  }, {
-    "x": 16,
-    "y": 180360
-  }, {
-    "x": 17,
-    "y": 175697
-  }, {
-    "x": 18,
-    "y": 114967
-  }],
+  // [{
+  // [{
+  //   "x": 0,
+  //   "y": 132189
+  // }, {
+  //   "x": 1,
+  //   "y": 61705
+  // }, {
+  //   "x": 2,
+  //   "y": 154976
+  // }, {
+  //   "x": 3,
+  //   "y": 81304
+  // }, {
+  //   "x": 4,
+  //   "y": 172572
+  // }, {
+  //   "x": 5,
+  //   "y": 140656
+  // }, {
+  //   "x": 6,
+  //   "y": 148606
+  // }, {
+  //   "x": 7,
+  //   "y": 53010
+  // }, {
+  //   "x": 8,
+  //   "y": 110783
+  // }, {
+  //   "x": 9,
+  //   "y": 196446
+  // }, {
+  //   "x": 10,
+  //   "y": 117057
+  // }, {
+  //   "x": 11,
+  //   "y": 186765
+  // }, {
+  //   "x": 12,
+  //   "y": 174908
+  // }, {
+  //   "x": 13,
+  //   "y": 75247
+  // }, {
+  //   "x": 14,
+  //   "y": 192894
+  // }, {
+  //   "x": 15,
+  //   "y": 150356
+  // }, {
+  //   "x": 16,
+  //   "y": 180360
+  // }, {
+  //   "x": 17,
+  //   "y": 175697
+  // }, {
+  //   "x": 18,
+  //   "y": 114967
+  // }],
   [{
     "x": 0,
     "y": 125797
@@ -157,7 +101,7 @@ const data = [
     "y": 263902
   }, {
     "x": 5,
-    "y": 113453
+    "y": 213453
   }, {
     "x": 6,
     "y": 289461
@@ -172,7 +116,7 @@ const data = [
     "y": 240859
   }, {
     "x": 10,
-    "y": 152776
+    "y": 252776
   }, {
     "x": 11,
     "y": 297282
@@ -193,10 +137,49 @@ const data = [
     "y": 218230
   }, {
     "x": 17,
-    "y": 161511
+    "y": 181511
   }, {
     "x": 18,
-    "y": 153227
+    "y": 193227
+  }, {
+    "x": 19,
+    "y": 193227
+  }, {
+    "x": 20,
+    "y": 183227
+  }, {
+    "x": 21,
+    "y": 203227
+  }, {
+    "x": 22,
+    "y": 243227
+  }, {
+    "x": 23,
+    "y": 253227
+  }, {
+    "x": 24,
+    "y": 273227
+  }, {
+    "x": 25,
+    "y": 283227
+  }, {
+    "x": 26,
+    "y": 293227
+  }, {
+    "x": 27,
+    "y": 293227
+  }, {
+    "x": 28,
+    "y": 303227
+  }, {
+    "x": 29,
+    "y": 323227
+  }, {
+    "x": 30,
+    "y": 353227
+  }, {
+    "x": 31,
+    "y": 353227
   }]
 ];
 
@@ -223,34 +206,37 @@ class StockLineChartBasic extends Component {
   }
 
   static navigationOptions = ({ navigation }) => ({
-    title: `StockLine - Gesture`,
+    header: null
   });
 
-  _panHandlerStart(cursorPositionX) {
+  _panHandlerStart(cursorPositionX, cursorPositionY) {
+    console.log('start', cursorPositionX, cursorPositionY);
     this.setState({
       selectedDataPointPosition: String(Math.floor(cursorPositionX * (data[0].length - 1)))
     });
   }
-  _panHandlerMove(cursorPositionX) {
+  _panHandlerMove(cursorPositionX, cursorPositionY) {
+    console.log('move', cursorPositionX, cursorPositionY);
     this.setState({
       selectedDataPointPosition: String(Math.floor(cursorPositionX * (data[0].length - 1)))
     });
   }
   _panHandlerEnd(cursorPositionX) {
     this.setState({
-      selectedDataPointPosition: ""
+      selectedDataPointPosition: String(Math.floor(cursorPositionX * (data[0].length - 1)))
     });
   }
 
   render() {
 
     const options = {
-      width: 250,
+      width,
       height: 250,
       color: '#2980B9',
+      backgroundColor: '#d0d4db',
       margin: {
         top: 10,
-        left: 35,
+        left: 10,
         bottom: 30,
         right: 10
       },
@@ -290,20 +276,23 @@ class StockLineChartBasic extends Component {
       },
       interaction: true,
       cursorLine: {
-        stroke: 'white',
+        stroke: 'rgb(158,162,166)',
         strokeWidth: 2
       }
     };
 
     return (
       <View style={styles.container}>
-        <Text> Data point index: { this.state.selectedDataPointPosition }</Text>
+        {/* <Text> Ngay: { this.state.selectedDataPointPosition + '/08'}</Text> */}
         <StockLine
           panHandlerStart={this._panHandlerStart}
           panHandlerMove={this._panHandlerMove}
           panHandlerEnd={this._panHandlerEnd}
           data={data}
           options={options}
+          convert={(date)=>{
+            
+          }}
           xKey='x'
           yKey='y' />
       </View>
